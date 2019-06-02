@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/loginscrn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="180dp"
+        android:text="ثبت نام"
+        android:textColor="@color/darkGreen"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/fstTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        android:text="نام و نام خانوادگی:" />
+
+    <EditText
+        android:id="@+id/txtNameReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="50dp"
+        android:layout_gravity="right"
+        android:background="@color/lightGreen"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/secTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="50dp"
+        android:text="کد ملی:" />
+
+    <EditText
+        android:id="@+id/txtIdReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="50dp"
+        android:background="@color/lightGreen"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/thirdTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="50dp"
+        android:text="گذرواژه:" />
+
+    <EditText
+        android:id="@+id/txtPwdReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="50dp"
+        android:autofillHints=""
+        android:background="@color/lightGreen"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/fourthTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="50dp"
+        android:text="شماره تلفن همراه:" />
+
+    <EditText
+        android:id="@+id/txtNumberReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="50dp"
+        android:autofillHints="اعداد را لاتین وارد کنید"
+        android:background="@color/lightGreen"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="100dp"
+        android:background="@color/govGreen"
+        android:text="ثبت نام"
+        android:textColor="@color/cardview_light_background" />
+
+    <TextView
+        android:id="@+id/lnkLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:onClick="test"
+        android:text="قبلا ثبت نام کرده اید؟ اینجا وارد شوید."
+        android:textColor="@color/darkGreen"
+        android:textSize="20dp" />
+</LinearLayout>
