@@ -31,9 +31,8 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         final DatabaseAccess dbAccess = new DatabaseAccess(this);
 
-       // id = getIntent().getStringExtra("id");
-
-       // txtId.setText(id);
+       // userId = getIntent().getStringExtra("userId");
+       // txtId.setText(userId);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,12 +41,17 @@ public class LoginActivity extends AppCompatActivity {
                 id = txtId.getText().toString();
                 Cursor userCursor = dbAccess.getDb().rawQuery("SELECT * FROM User", null);
                 userCursor.moveToFirst();
-                Log.d("LoginActivity","id: " + id + " pass: " + password);
+                Log.d("LoginActivity","userId: " + id + " pass: " + password);
                 userFound = false;
                 while (!userCursor.isAfterLast()){
                     String thisId = userCursor.getString(0);
                     String thisPass = userCursor.getString(1);
                     if(thisPass.equals(password) && thisId.equals(id)) {
+                        GlobalVariables.id = thisId;
+                        GlobalVariables.password = thisPass;
+                        GlobalVariables.phoneNumber = userCursor.getString(4);
+                        GlobalVariables.balance = userCursor.getDouble(3);
+                        GlobalVariables.name = userCursor.getString(2);
                         userFound = true;
                         break;
                     }
@@ -56,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(userFound){
                     Log.d("LoginActivity", "User was found");
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    intent.putExtra("id", id);
+                    intent.putExtra("userId", id);
                     startActivity(intent);
                 }
                 else {

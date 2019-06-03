@@ -17,7 +17,7 @@ import org.aut.e_gov.models.DatabaseAccess;
 public class RegistrationActivity extends AppCompatActivity {
     Button btnLogin;
     TextView txtPassword, txtName, txtPhoneNumber;
-    TextView txtId, inkLogin;// = findViewById(R.id.txtEmailReg);
+    TextView txtId, inkLogin;// = findViewById(R.userId.txtEmailReg);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 dbAccess.getDb().insert("User", null, usercv);
 
                 Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
-                intent.putExtra("id", txtId.getText().toString());
+                intent.putExtra("userId", txtId.getText().toString());
                 startActivity(intent);
 
             }
@@ -59,7 +59,7 @@ public class RegistrationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
-                intent.putExtra("id", txtId.getText().toString());
+                intent.putExtra("userId", txtId.getText().toString());
                 startActivity(intent);
             }
         });

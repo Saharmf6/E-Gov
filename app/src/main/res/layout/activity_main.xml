@@ -5,45 +5,70 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:weightSum="6"
     android:orientation="vertical"
     android:background="#88070707">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="239dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/txtNameView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:paddingTop="0dp"
+            android:paddingRight="10dp"
+            android:text="نام و نام حانوادگی:" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_weight="1"
             >
 
             <Button
                 android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="1"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/roundedbutton"
-                android:text="Button" />
+                android:text="خرید شارژ" />
 
             <Button
                 android:id="@+id/button3"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="5dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_weight="1"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/roundedbutton"
-                android:text="Button" />
+                android:text="خرید بلیط هواپیما" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:orientation="horizontal">
 
             <Button
@@ -55,7 +80,8 @@
                 android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/roundedbutton"
-                android:text="Button" />
+                android:text="اخبار روز" />
+
             <Button
                 android:id="@+id/button6"
                 android:layout_width="wrap_content"
@@ -65,14 +91,12 @@
                 android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/roundedbutton"
-                android:text="Button" />
+                android:text="تئاتر و سینما" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-
             android:orientation="horizontal">
 
             <Button
@@ -84,7 +108,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/roundedbutton"
-                android:text="Button" />
+                android:text="آب و هوا" />
 
             <Button
                 android:id="@+id/button5"
@@ -95,18 +119,17 @@
                 android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/roundedbutton"
-                android:text="Button" />
+                android:text="فال حافظ" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
 
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button9"
+                android:id="@+id/btnNews"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
@@ -114,7 +137,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/roundedbutton"
-                android:text="Button" />
+                android:text="اخبار" />
 
             <Button
                 android:id="@+id/button8"
@@ -131,7 +154,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:orientation="horizontal">
 
             <Button
@@ -156,4 +178,5 @@
                 android:background="@drawable/roundedbutton"
                 android:text="Button" />
         </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
