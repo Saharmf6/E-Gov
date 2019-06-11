@@ -6,4 +6,6 @@ public class GlobalVariables {
     static String name;
     static double balance;
     static String phoneNumber;
+
+    static int newsId = -1;
 }

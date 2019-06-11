@@ -1,12 +1,14 @@
 package org.aut.e_gov;
 
-import android.content.ContentValues;
+
+//weather api key: 96a31e4c18b908cf12fa2ffbf5e2abe3
+
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
+import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +16,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.aut.e_gov.models.DatabaseAccess;
+import org.aut.e_gov.models.News;
 
 import java.util.List;
 
@@ -27,7 +29,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     private int cartId;
     private String userId;
     public int totalPrice;
-
+    private int i;
     public NewsAdapter(Context mCtx, List<News> newsList, String userId) {
         this.mCtx = mCtx;
         this.newsList = newsList;
@@ -39,6 +41,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     public NewsViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.list_layout, null);
+        this.i = i;
         return new NewsViewHolder(view);
     }
 
@@ -62,18 +65,27 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         int newsId;
         ImageView imageView;
         TextView textViewTitle, textViewDesc, textViewRating;
-        Button btnAddToCart, btnComment;///////////////////////////////////////////////
+        Button btnRating;
         EditText edtCount;/////////////////////////////////////////////////////////////
         final DatabaseAccess dbAccess = new DatabaseAccess(mCtx);
 
         public NewsViewHolder(@NonNull final View itemView) {
             super(itemView);
-            btnAddToCart = itemView.findViewById(R.id.btnAddOrder);
-            edtCount = itemView.findViewById(R.id.edtCount);
             imageView = itemView.findViewById(R.id.imageView);
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
             textViewDesc = itemView.findViewById(R.id.textViewShortDesc);
             textViewRating = itemView.findViewById(R.id.textViewRating);
+            btnRating = itemView.findViewById(R.id.btnRating);
+            btnRating.setOnClickListener(new View.OnClickListener() {
+                @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mCtx , FeedbackActivity.class);
+                    intent.putExtra("newsId", newsList.get(i).getNewsId());
+                    mCtx.startActivity(intent);
+
+                }
+            });
         }
     }
 }

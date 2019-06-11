@@ -1,4 +1,4 @@
-package org.aut.e_gov;
+package org.aut.e_gov.models;
 
 public class News {
     private int newsId;

@@ -31,9 +31,8 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         final DatabaseAccess dbAccess = new DatabaseAccess(this);
 
-       // userId = getIntent().getStringExtra("userId");
-       // txtId.setText(userId);
-
+        txtId.setText("0022661441");
+        txtPassword.setText("sahar");
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

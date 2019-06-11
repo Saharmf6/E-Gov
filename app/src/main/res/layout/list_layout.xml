@@ -67,46 +67,36 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/imageView"
-                android:text="INR 56990"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/btnAddOrder"
-                android:layout_width="30dp"
+                android:id="@+id/btnRating"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textViewPrice"
-                android:background="@color/colorPrimary"
+                android:background="@color/lightGreen"
                 android:clickable="true"
                 android:outlineAmbientShadowColor="@color/cardview_light_background"
                 android:outlineSpotShadowColor="@color/cardview_light_background"
                 android:paddingLeft="5dp"
-                android:shadowColor="@color/cardview_light_background" />
+                android:shadowColor="@color/cardview_light_background"
+                android:text="امتیازدهی به خبر" />
 
-            <EditText
-                android:id="@+id/edtCount"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_below="@id/textViewPrice"
-                android:layout_toRightOf="@id/btnAddOrder"
-                android:hint="count"
-                android:shadowColor="@color/lightGreen"
-                android:text=""
-                android:textColorHint="@color/lightGreen" />
 
             <Button
                 android:id="@+id/btnComment"
-                android:layout_width="30dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textViewPrice"
                 android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/edtCount"
-                android:background="@color/colorPrimary"
+                android:layout_toRightOf="@id/btnRating"
+                android:background="@color/lightGreen"
                 android:outlineAmbientShadowColor="@color/cardview_light_background"
                 android:outlineSpotShadowColor="@color/cardview_light_background"
                 android:paddingLeft="3dp"
                 android:shadowColor="@color/cardview_light_background"
-                android:text="" />
+                android:text="ادامه خبر..." />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 

@@ -1,16 +1,13 @@
 package org.aut.e_gov;
 
-import android.app.Activity;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 
 import org.aut.e_gov.models.DatabaseAccess;
+import org.aut.e_gov.models.News;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -57,8 +54,10 @@ public class NewsActivity extends AppCompatActivity {
             newsCursor.moveToNext();
         }
 
+
+
         //creating recyclerview adapter
-        NewsAdapter adapter = new NewsAdapter(this, newsList, userId);
+        NewsAdapter adapter = new NewsAdapter(this, newsList,userId);
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
 
