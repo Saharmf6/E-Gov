@@ -73,9 +73,9 @@ public class FeedbackActivity extends AppCompatActivity {
         mSendFeedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mFeedback.getText().toString().isEmpty()) {
-                    Toast.makeText(FeedbackActivity.this, "لطفا کادر بالا را پر کنید.", Toast.LENGTH_LONG).show();
-                } else {
+               // if (mFeedback.getText().toString().isEmpty()) {
+                 //   Toast.makeText(FeedbackActivity.this, "لطفا کادر بالا را پر کنید.", Toast.LENGTH_LONG).show();
+                //} else {
 
                     Cursor userCursor = dbAccess.getDb().rawQuery("SELECT * FROM User", null);
                     userCursor.moveToFirst();
@@ -99,25 +99,26 @@ public class FeedbackActivity extends AppCompatActivity {
                         for (int i = 0; i < parsing.length; i++) {
                             String[] datas = parsing[i].split(":");
                             if (Integer.parseInt(datas[0]) == newsId) {
-                                datas[1] = rating + "";
+                                datas[1] = Integer.toString(rating);
                                 newsAdded = true;
                             }
-                            newString += datas[0] + ':' + datas[1] + ',';
+                            newString = newString + datas[0] + ':' + datas[1] + ',';
                         }
-                        if (newsAdded == false)
+                        if (newsAdded == false){
                             newString += newsId + ":" + rating + ",";
+                        }
                     }
-                    else
+                    else if (previousRatings == null || previousRatings.equals("")) {
                         newString = newsId + ":" + rating + ",";
+                    }
                     usercv.put("news_rating", newString);
                     dbAccess.getDb().update("User", usercv, "id = '"+GlobalVariables.id+"'", null);
                     //TODO: change the rating on the news database
-
                     mFeedback.setText("");
                     mRatingBar.setRating(0);
                     Toast.makeText(FeedbackActivity.this, "ممنون از نظر شما", Toast.LENGTH_SHORT).show();
                 }
-            }
+           // }
         });
     }
 }

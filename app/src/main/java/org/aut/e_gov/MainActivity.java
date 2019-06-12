@@ -9,15 +9,16 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnNews, btnWeather;
+    Button btnNews, btnWeather, btnMoneyTransfer;
     TextView txtName;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+    public void findViews(){
         txtName = findViewById(R.id.txtNameView);
-        txtName.setText(GlobalVariables.name);
         btnNews = findViewById(R.id.btnNews);
+        btnWeather = findViewById(R.id.btnWeather);
+        btnMoneyTransfer = findViewById(R.id.btnMoneyTransfer);
+    }
+    public void implementClickListeners(){
         btnNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btnWeather = findViewById(R.id.btnWeather);
+
         btnWeather.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,6 +36,25 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        btnMoneyTransfer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MoneyTransfer.class);
+                startActivity(intent);
+            }
+        });
+
+
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        findViews();
+        txtName.setText(GlobalVariables.name);
+        implementClickListeners();
 
     }
 }

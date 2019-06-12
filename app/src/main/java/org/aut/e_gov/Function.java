@@ -2,6 +2,8 @@ package org.aut.e_gov;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -51,6 +53,7 @@ public class Function {
             rd.close();
             return response.toString();
         } catch (Exception e) {
+            Log.d("WeatherActivity", "excuteGet: ");e.getCause();
             return null;
         } finally {
             if(connection != null) {

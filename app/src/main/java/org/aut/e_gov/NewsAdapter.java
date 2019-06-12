@@ -1,8 +1,5 @@
 package org.aut.e_gov;
 
-
-//weather api key: 96a31e4c18b908cf12fa2ffbf5e2abe3
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -16,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.aut.e_gov.models.DatabaseAccess;
 import org.aut.e_gov.models.News;
@@ -76,16 +74,36 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             textViewDesc = itemView.findViewById(R.id.textViewShortDesc);
             textViewRating = itemView.findViewById(R.id.textViewRating);
             btnRating = itemView.findViewById(R.id.btnRating);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = getAdapterPosition();
+                    if(pos != RecyclerView.NO_POSITION){
+                        News clickedDataItem = newsList.get(pos);
+                        Toast.makeText(v.getContext(), "You clicked " + clickedDataItem.getNewsId(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
+
+
             btnRating.setOnClickListener(new View.OnClickListener() {
                 @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(mCtx , FeedbackActivity.class);
-                    intent.putExtra("newsId", newsList.get(i).getNewsId());
+                    int pos = getAdapterPosition();
+                    if(pos != RecyclerView.NO_POSITION){
+                        News clickedDataItem = newsList.get(pos);
+                        Toast.makeText(v.getContext(), "You clicked " + clickedDataItem.getNewsId(), Toast.LENGTH_SHORT).show();
+                    }
+                    intent.putExtra("newsId", newsList.get(pos).getNewsId());
                     mCtx.startActivity(intent);
-
                 }
             });
+
         }
+
     }
 }

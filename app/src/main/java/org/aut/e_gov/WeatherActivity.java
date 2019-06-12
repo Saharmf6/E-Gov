@@ -29,9 +29,9 @@ public class WeatherActivity extends AppCompatActivity {
     TextView selectCity, cityField, detailsField, currentTemperatureField, humidity_field, pressure_field, weatherIcon, updatedField;
     ProgressBar loader;
     Typeface weatherFont;
-    String city = "Dhaka, BD";
+    String city = "Tehran";
     /* Please Put your API KEY here */
-    String OPEN_WEATHER_MAP_API = "cbfdb21fa1793c10b14b6b6d00fbef03";
+    String OPEN_WEATHER_MAP_API = "96a31e4c18b908cf12fa2ffbf5e2abe3";
     /* Please Put your API KEY here */
 
 
@@ -39,7 +39,7 @@ public class WeatherActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_weather);
 
         loader = (ProgressBar) findViewById(R.id.loader);
         selectCity = (TextView) findViewById(R.id.selectCity);
@@ -51,7 +51,7 @@ public class WeatherActivity extends AppCompatActivity {
         pressure_field = (TextView) findViewById(R.id.pressure_field);
         weatherIcon = (TextView) findViewById(R.id.weather_icon);
         weatherFont = Typeface.createFromAsset(getAssets(), "fonts/weathericons-regular-webfont.ttf");
-//        weatherIcon.setTypeface(weatherFont);
+        weatherIcon.setTypeface(weatherFont);
 
         taskLoadUp(city);
 
@@ -107,7 +107,7 @@ public class WeatherActivity extends AppCompatActivity {
 
         }
         protected String doInBackground(String...args) {
-            String xml = Function.excuteGet("http://api.openweathermap.org/data/2.5/weather?q=" + args[0] +
+            String xml = Function.excuteGet("https://api.openweathermap.org/data/2.5/weather?q=" + args[0] +
                     "&units=metric&appid=" + OPEN_WEATHER_MAP_API);
             return xml;
         }
