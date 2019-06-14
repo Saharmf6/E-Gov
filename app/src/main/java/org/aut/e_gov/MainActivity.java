@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnNews, btnWeather, btnMoneyTransfer;
+    Button btnNews, btnWeather, btnMoneyTransfer, btnBuyCredit, btnHafez;
     TextView txtName;
 
     public void findViews(){
@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         btnNews = findViewById(R.id.btnNews);
         btnWeather = findViewById(R.id.btnWeather);
         btnMoneyTransfer = findViewById(R.id.btnMoneyTransfer);
+        btnBuyCredit = findViewById(R.id.btnBuyCharge);
     }
     public void implementClickListeners(){
         btnNews.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnBuyCredit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BuyCreditActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

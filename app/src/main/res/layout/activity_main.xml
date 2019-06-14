@@ -50,8 +50,9 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             >
+
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btnBuyCharge"
                 android:layout_width="110dp"
                 android:layout_height="80dp"
                 android:layout_marginTop="10dp"
@@ -109,7 +110,7 @@
                 android:text="آب و هوا" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/btnHafez"
                 android:layout_width="110dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="5dp"

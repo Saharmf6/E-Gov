@@ -6,4 +6,7 @@
     <color name="govGreen">#18A508</color>
     <color name="lightGreen">#A8DAA2</color>
     <color name="darkGreen">#1B4B08</color>
+    <color name="hamraheAvval">#1CDFF1</color>
+    <color name="irancell">#FDD835</color>
+    <color name="rightel">#540C69</color>
 </resources>
