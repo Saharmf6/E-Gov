@@ -139,37 +139,18 @@
                 android:text="انتقال وجه" />
 
             <Button
-                android:id="@+id/button8"
+                android:id="@+id/btnDonation"
                 android:layout_width="110dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/roundedbutton"
-                android:text="Button" />
+                android:text="نیکوکاری" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button10"
-                android:layout_width="110dp"
-                android:layout_height="80dp"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/roundedbutton"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button11"
-                android:layout_width="110dp"
-                android:layout_height="80dp"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/roundedbutton"
-                android:text="Button" />
-        </LinearLayout>
+            android:orientation="horizontal"/>
     </LinearLayout>
 </LinearLayout>
