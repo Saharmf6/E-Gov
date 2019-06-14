@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnNews, btnWeather, btnMoneyTransfer, btnBuyCredit, btnHafez, btnBalance, btnDonation;
+    Button btnNews, btnWeather, btnMoneyTransfer, btnBuyCredit, btnHafez, btnBalance, btnDonation, btnStock;
     TextView txtName;
 
     public void findViews(){
@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         btnHafez = findViewById(R.id.btnHafez);
         btnBalance = findViewById(R.id.btnBalance);
         btnDonation = findViewById(R.id.btnDonation);
+        btnStock = findViewById(R.id.btnStock);
     }
     public void implementClickListeners(){
         btnNews.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MoneyTransfer.class);
+                intent.putExtra("destCard", "");
+                intent.putExtra("count", 0);
                 startActivity(intent);
             }
         });
@@ -77,6 +80,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, DonationActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnStock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, StockActivity.class);
                 startActivity(intent);
             }
         });

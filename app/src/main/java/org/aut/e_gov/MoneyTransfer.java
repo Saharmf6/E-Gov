@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextPaint;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
@@ -19,8 +20,9 @@ import org.aut.e_gov.models.DatabaseAccess;
 public class MoneyTransfer extends AppCompatActivity {
     EditText et1,et2,et3,et4,edt1,edt2,edt3,edt4,edtAmount,edtPass2,edtCvv2, edtYear, edtMonth;
     Button btnDone;
-    String cardNumber, destCardNumber;
+    String cardNumber, destCardNumber, intentDestCard;
     Double amount;
+    int intentCount;
     public void findViews(){
         et1 = findViewById(R.id.editText);
         et2 = findViewById(R.id.editText2);
@@ -269,19 +271,19 @@ public class MoneyTransfer extends AppCompatActivity {
 
         });
 
-        et1.setText("1234");
-        et2.setText("1234");
-        et3.setText("1234");
-        et4.setText("1234");
-        edtYear.setText("12");
-        edtMonth.setText("34");
-        edtAmount.setText("500");
-        edtPass2.setText("1234");
-        edtCvv2.setText("1234");
-        edt1.setText("7382");
-        edt2.setText("7382");
-        edt3.setText("7382");
-        edt4.setText("7382");
+//        et1.setText("1234");
+//        et2.setText("1234");
+//        et3.setText("1234");
+//        et4.setText("1234");
+//        edtYear.setText("12");
+//        edtMonth.setText("34");
+//        edtAmount.setText("500");
+//        edtPass2.setText("1234");
+//        edtCvv2.setText("1234");
+//        edt1.setText("7382");
+//        edt2.setText("7382");
+//        edt3.setText("7382");
+//        edt4.setText("7382");
 
         btnDone.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -344,7 +346,6 @@ public class MoneyTransfer extends AppCompatActivity {
 
                 }
                 else if (!foundCard){
-
                     Intent intent = new Intent(MoneyTransfer.this, MainActivity.class);
                     startActivity(intent);
                 }
@@ -361,7 +362,20 @@ public class MoneyTransfer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_money_transfer);
+        intentDestCard = getIntent().getStringExtra("destCard");
+        intentCount = getIntent().getIntExtra("count", 5);
+
         findViews();
         implementListeners();
+        if(!intentDestCard.equals("")){
+            String[] x = intentDestCard.split("-");
+            Log.d("MoneyTransfer", "destIntent: " + intentDestCard);
+            edt1.setText(x[0]);
+            edt2.setText(x[1]);
+            edt3.setText(x[2]);
+            edt4.setText(x[3]);
+            Log.d("MoneyTransfer", "intentCount: " + intentCount);
+            edtAmount.setText("" + intentCount * 500);
+        }
     }
 }

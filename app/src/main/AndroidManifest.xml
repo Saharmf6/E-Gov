@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DonationActivity"></activity>
+        <activity android:name=".StockActivity"></activity>
+        <activity android:name=".DonationActivity" />
         <activity android:name=".BalanceActivity" />
         <activity android:name=".HafezActivity" />
         <activity android:name=".BuyCreditActivity" />

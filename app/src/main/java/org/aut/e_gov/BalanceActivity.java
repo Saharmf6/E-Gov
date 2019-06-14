@@ -98,7 +98,6 @@ public class BalanceActivity extends AppCompatActivity {
         btnGetBalance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_LONG).show();
 
                 boolean userFound = false;
                 cardNumber = et1.getText().toString();
@@ -113,7 +112,10 @@ public class BalanceActivity extends AppCompatActivity {
                     else
                         bankCursor.moveToNext();
                 }
-                txtBalance.setText(Double.toString( bankCursor.getDouble(5)));
+                if (userFound)
+                    txtBalance.setText(Double.toString( bankCursor.getDouble(5)));
+                else
+                    Toast.makeText(getApplicationContext(), "اطلاعات وارد شده نادرست است", Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -124,10 +126,10 @@ public class BalanceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_balance);
         findViews();
         implementListeners();
-        et1.setText("1234123412341234");
-        edtCvv2.setText("1234");
-        edtMonth.setText("34");
-        edtYear.setText("12");
-        edtPass2.setText("1234");
+//        et1.setText("1234123412341234");
+//        edtCvv2.setText("1234");
+//        edtMonth.setText("34");
+//        edtYear.setText("12");
+//        edtPass2.setText("1234");
     }
 }
