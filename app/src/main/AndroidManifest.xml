@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BuyCreditActivity"></activity>
+        <activity android:name=".BalanceActivity"></activity>
+        <activity android:name=".HafezActivity" />
+        <activity android:name=".BuyCreditActivity" />
         <activity android:name=".MoneyTransfer" />
         <activity android:name=".WeatherActivity" />
         <activity android:name=".FeedbackActivity" />
@@ -22,6 +24,7 @@
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

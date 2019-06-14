@@ -93,8 +93,8 @@ public class BuyCreditActivity extends AppCompatActivity {
             @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
-                txtOperator.setText("ایرانسل");
                 txtOperator.setTextColor(R.color.irancell);
+                txtOperator.setText("ایرانسل");
             }
         });
 
@@ -102,8 +102,8 @@ public class BuyCreditActivity extends AppCompatActivity {
             @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
-                txtOperator.setText("رایتل");
                 txtOperator.setTextColor(R.color.rightel);
+                txtOperator.setText("رایتل");
             }
         });
 
@@ -111,8 +111,8 @@ public class BuyCreditActivity extends AppCompatActivity {
             @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
-                txtOperator.setText("همراه اول");
                 txtOperator.setTextColor(R.color.hamraheAvval);
+                txtOperator.setText("همراه اول");
             }
         });
 
@@ -142,25 +142,6 @@ public class BuyCreditActivity extends AppCompatActivity {
 
             public void afterTextChanged(Editable s) {
                 // TODO Auto-generated method stub
-            }
-
-        });
-        edtCvv2.addTextChangedListener(new TextWatcher() {
-
-            public void onTextChanged(CharSequence s, int start,int before, int count)
-            {
-                // TODO Auto-generated method stub
-            }
-            public void beforeTextChanged(CharSequence s, int start,
-                                          int count, int after) {
-                // TODO Auto-generated method stub
-
-            }
-
-            public void afterTextChanged(Editable s) {
-                // TODO Auto-generated method stub
-                edtYear.requestFocus();
-
             }
 
         });
@@ -252,10 +233,10 @@ public class BuyCreditActivity extends AppCompatActivity {
         setContentView(R.layout.activity_buy_credit);
         findViews();
         implementListeners();
-        et1.setText("1234123412341234");
-        edtYear.setText("12");
-        edtMonth.setText("34");
-        edtPass2.setText("1234");
-        edtCvv2.setText("1234");
+//        et1.setText("1234123412341234");
+//        edtYear.setText("12");
+//        edtMonth.setText("34");
+//        edtPass2.setText("1234");
+//        edtCvv2.setText("1234");
     }
 }

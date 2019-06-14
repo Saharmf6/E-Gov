@@ -15,7 +15,10 @@
         android:weightSum="1"
         android:layout_weight="1"
         android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="20dp"
+
+        >
 
         <TextView
             android:id="@+id/txtNameView"
@@ -24,7 +27,8 @@
             android:layout_weight="1"
             android:background="@android:color/white"
             android:textColor="@android:color/black"
-            android:gravity="center" />
+            android:gravity="center"
+            />
 
         <TextView
             android:id="@+id/textView"
@@ -62,13 +66,13 @@
                 android:text="خرید شارژ" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/btnBalance"
                 android:layout_width="110dp"
                 android:layout_height="80dp"
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/roundedbutton"
-                android:text="خرید بلیط هواپیما" />
+                android:text="موجودی" />
         </LinearLayout>
 
         <LinearLayout
@@ -89,10 +93,10 @@
                 android:id="@+id/button6"
                 android:layout_width="110dp"
                 android:layout_height="80dp"
-                android:layout_weight="1"
                 android:layout_marginBottom="5dp"
+                android:layout_weight="1"
                 android:background="@drawable/roundedbutton"
-                android:text="تئاتر و سینما" />
+                android:text="تازه های سینما" />
         </LinearLayout>
 
         <LinearLayout

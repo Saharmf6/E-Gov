@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnNews, btnWeather, btnMoneyTransfer, btnBuyCredit, btnHafez;
+    Button btnNews, btnWeather, btnMoneyTransfer, btnBuyCredit, btnHafez, btnBalance;
     TextView txtName;
 
     public void findViews(){
@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         btnWeather = findViewById(R.id.btnWeather);
         btnMoneyTransfer = findViewById(R.id.btnMoneyTransfer);
         btnBuyCredit = findViewById(R.id.btnBuyCharge);
+        btnHafez = findViewById(R.id.btnHafez);
+        btnBalance = findViewById(R.id.btnBalance);
     }
     public void implementClickListeners(){
         btnNews.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +52,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, BuyCreditActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnHafez.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, HafezActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnBalance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BalanceActivity.class);
                 startActivity(intent);
             }
         });
